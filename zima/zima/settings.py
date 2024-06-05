@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'zima.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'users2',
+        'NAME': 'krs',
         'USER': 'postgres',
         'PASSWORD': '195375AsD+',
         # 'HOST': '31.129.99.186',
