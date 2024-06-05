@@ -1,0 +1,28 @@
+{% load bootstrap4 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">  <!-- Подключите CSS-файл -->
+</head>
+<body>
+    <header>
+        <h1>{% block header %}{% endblock %}</h1>
+        <!-- Добавьте навигацию, логотип или другой контент -->
+    </header>
+
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024
+            Все права защищены. Интелектуальная собственность Зуфарова И.М.{% block footer %}{% endblock %}</p>
+        <!-- Добавьте информацию об авторских правах, контактные данные или другую информацию -->
+    </footer>
+</body>
+</html>

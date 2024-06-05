@@ -1,0 +1,52 @@
+{% load thumbnail %}
+{% load static %}
+{% load bootstrap4 %}
+{% load thumbnail %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Домашняя страница</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            {% if user.is_authenticated %}
+                <p>Добро пожаловать, {{ user.username }}!</p>
+                <a href="{% url 'login' %}">Выйти</a>
+            {% else %}
+                <p>Вы не авторизованы.</p>
+                <a href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1></h1>
+
+            <div class="image-grid">
+                <a href="zima/">
+
+                    <img src="{% static 'image/zima_ico.jpg' %}" alt="Zima"
+                    style="width: 100px; height: auto;">
+                </a>
+<!--                <a href="zima_download/">-->
+<!--                    <img src="{% static 'images/image2.jpg' %}" alt="Картинка 2">-->
+<!--                </a>-->
+<!--                <a href="#">-->
+<!--                    <img src="{% static 'images/image3.jpg' %}" alt="Картинка 3">-->
+<!--                </a>-->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Добавьте информацию о футере -->
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% load thumbnail %}
+{% load static %}
+{% load bootstrap4 %}
+
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link rel="stylesheet" href="static 'bootstrap/css/bootstrap.css'">
+</head>
+<body>
+    <div class="user-info">
+        {% if user.is_authenticated %}
+            <p>Добро пожаловать, {{ user.username }}!</p>
+            <a href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+            <p>Вы не авторизованы.</p>
+            <a href="{% url 'login' %}">Войти</a>
+        {% endif %}
+    </div>
+ <!-- Подключение Bootstrap JS (необходим для работы некоторых компонентов) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+    <footer>
+        <!-- Добавьте информацию о футере -->
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
